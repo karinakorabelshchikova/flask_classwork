@@ -44,10 +44,10 @@ def bootstrap():
                   <head>
                     <meta charset="utf-8">
                     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-                    <link rel="stylesheet" 
-                    href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" 
-                    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" 
-                    crossorigin="anonymous">
+                    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/''' +\
+                        '''bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo''' +\
+                        '''8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" ''' +\
+                        '''crossorigin="anonymous">
                     <link rel="stylesheet" type="text/css" href="{url_for('static', filename='css/style.css')}" />
                     <title>Колонизация</title>
                   </head>
@@ -133,43 +133,85 @@ def choice(planet_name):
     PLANETS = 'Меркурий, Венера, Земля, Марс, Юпитер, Сатурн, Уран, Нептун'.lower().split(', ')
     planet_name_lower = planet_name.lower()
     if planet_name_lower == PLANETS[2]:
-        return f'''<!doctype html>
+        return '''<!doctype html>
                     <html lang="ru">
                       <head>
                         <meta charset="utf-8">
-                        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.
-                        com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha38
-                        4-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf2
-                        3Q9Ifjh" crossorigin="anonymous">
+                        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/''' +\
+                        '''bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo''' +\
+                        '''8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" ''' +\
+                        '''crossorigin="anonymous">
                         <title>it's title</title>
                       </head>
                       <body>
-                        <h1>{planet_name}!</h1>
+                        <h1>{}!</h1>
                         <h2>Истощённые ресурсы</h2>
-                        <blockquote>
-                          <h2 class="blockquote">В основном безвредна</h2>
+                        <blockquote class="blockquote text-center">
+                          <h2 class="mb-0 blockquote font-weight-bold">В основном безвредна</h2>
                           <footer class="blockquote-footer">Дуглас Адамс, <cite>
                           Автостопом по галактике</cite></footer>
                         </blockquote>
-                        <h2>Это близко</h2>
+                        <h2>Это <i>близко</i></h2>
                        </body>
-                    </html>'''
+                    </html>'''.format(planet_name)
 
     elif planet_name_lower in PLANETS:
-        return f'''<h1>{planet_name}?</h1>
-                <h2>Представляет интерес!</h2>
+        return '''<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/''' +\
+                        '''bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo''' +\
+                        '''8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" ''' +\
+                        '''crossorigin="anonymous">
+                <h1 class="p-3 mb-2 bg-primary text-white">{}?</h1>
+                <h2 class="shadow-lg p-3 mb-5 bg-white rounded">Представляет интерес!</h2>
                 <h2>Имеет историю открытия,</h2>
-                <h2>Имеет потенциал.</h2>'''
+                <h2>Имеет потенциал.</h2>'''.format(planet_name)
     elif planet_name_lower == 'плутон':
-        return f'''<h1>{planet_name}?</h1>
-                <h2>Это</h2>
-                <h2>не</h2>
-                <h2>планета.</h2>'''
+        return f'''<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/''' +\
+                        '''bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo''' +\
+                        '''8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" ''' +\
+                        '''crossorigin="anonymous">
+                <h1 class='ml-3'>{}?</h1>
+                <h2 class="ml-5">Это</h2>
+                <h2 class="text-danger ml-5">не</h2>
+                <h2 class="text-monospace ml-5">планета.</h2>'''.format(planet_name)
     else:
-        return f'''<h1>{planet_name}? Неожиданный выбор!</h1>
-                <h2>Изученна хуже Земли</h2>
-                <h2>Далеко расположенна</h2>
-                <h2>Вам не дадут грант на её изучение</h2>'''
+        return '''<!doctype html>
+                    <html lang="ru">
+                      <head>
+                        <meta charset="utf-8">
+                        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/''' +\
+                        '''bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo''' +\
+                        '''8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" ''' +\
+                        '''crossorigin="anonymous">
+                        <title>it's title</title>
+                      </head>
+                      <body>
+                        <h1>{}? Неожиданный выбор!</h1>
+                        <h2>Изученна хуже Земли</h2>
+                        <p class="font-italic text-right">Далеко расположенна.....</p>
+                        <p class="p-3 mb-2 bg-warning text-dark">Вам не дадут грант на её изучение</p>
+                      </body>
+                    </html>'''.format(planet_name)
+
+
+@app.route('/results/<nickname>/<int:level>/<float:rating>')
+def results(nickname, level, rating):
+    return '''<!doctype html>
+                    <html lang="ru">
+                      <head>
+                        <meta charset="utf-8">
+                        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/''' +\
+                        '''bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo''' +\
+                        '''8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" ''' +\
+                        '''crossorigin="anonymous">
+                        <title>it's title</title>
+                      </head>
+                      <body>
+                        <h1 class="p-3 bg-dark text-white">Здравствуйте, {}!</h1>
+                        <h2 class="text-info">Ваш этап отбора: {}.</h2>
+                        <h2 class="text-info">Ваш рейтинг: {}.</h2>
+                        <h3 class="d-inline m-1 bg-primary text-white">Желаем удачи!</h2>
+                      </body>
+                    </html>'''.format(nickname, level, rating)
 
 
 if __name__ == '__main__':
