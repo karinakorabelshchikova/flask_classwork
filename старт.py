@@ -1,4 +1,4 @@
-from flask import Flask, url_for, request
+from flask import Flask, url_for, request, render_template
 
 app = Flask(__name__)
 
@@ -212,6 +212,11 @@ def results(nickname, level, rating):
                         <h3 class="d-inline m-1 bg-primary text-white">Желаем удачи!</h2>
                       </body>
                     </html>'''.format(nickname, level, rating)
+
+
+@app.route('/training/<prof>')
+def training(prof):
+    return render_template('training.html', profession=prof)
 
 
 if __name__ == '__main__':

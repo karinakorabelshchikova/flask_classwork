@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+ {% if 'инженер' in profession or 'строитель' in profession %}
+    <h1>Инженерные тренажеры</h1>
+    <img src='/static/img/мкс-инженерные-тренажёры.jpg' alt="мкс-инженерные-тренажёры">
+ {% else %}
+    <h1>Научные симуляторы</h1>
+    <img src='/static/img/мкс-научные-симуляторы.jpg' alt="мкс-научные-симуляторы">
+ {% endif %}
+</body>
+</html>
