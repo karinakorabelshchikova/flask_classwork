@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang='ru'>
+<head>
+    <meta charset='UTF-8'>
+    <title>Title</title>
+</head>
+<body>
+<h1>Профессии</h1>
+{% if list == 'ol' %}
+    {% for profession in professions %}
+        <h2>{{loop.index}}. {{profession}}</h2>
+    {% endfor %}
+{% elif list == 'ul' %}
+    {% for profession in professions %}
+        <h2>* {{profession}}</h2>
+    {% endfor %}
+{% else %}
+    <h2>Ошибка: неподдерживаемый параметр.</h2>
+    <p>Поддерживаемые параметры: ul, ol</p>
+{% endif %}
+</body>
+</html>

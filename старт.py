@@ -219,6 +219,14 @@ def training(prof):
     return render_template('training.html', profession=prof)
 
 
+@app.route('/list_prof/<list>')
+def list_of_professions(list):
+    parameters = dict()
+    parameters['professions'] = ['Исследователь', 'Сапёр', 'Ровер']
+    parameters['list'] = list
+    return render_template('liiist.html', **parameters)
+
+
 @app.route('/answer')
 @app.route('/auto_answer')
 def answer():
